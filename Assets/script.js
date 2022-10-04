@@ -1,11 +1,12 @@
 
 
-// first color all the rows past
+// automatically color all the rows past on page load
 $(document).ready(function(){
     $("tr").addClass("row, past");
 });
 
 //next color the current hour row current
+function setCurrent () {
 $(document).ready(function(){
     var currenthour = moment();
     var hournow = currenthour.hour();
@@ -40,11 +41,11 @@ $(document).ready(function(){
     if (hournow === 17) { 
         $("#h17").addClass("row, present");
     };
-
 });
+};
 
 //finally color thefuture future hours
-
+function setFuture () {
 $(document).ready(function(){
     var currenthour = moment();
     var hournow = currenthour.hour();
@@ -80,7 +81,7 @@ $(document).ready(function(){
         $("#17h").addClass("row, future);");
     };
 });
-
+};
 
 
 //create a function to get the date and time
@@ -94,5 +95,7 @@ function setDateTime () {
     document.getElementById('currentTime').innerHTML = currentTime;
 }
 
-// Set interval to refresh date/time and color the rows every second
+// Set intervals to refresh date/time and color the rows every second
 setInterval(setDateTime, 1000);
+setInterval(setFuture, 1000);
+setInterval(setCurrent, 1000);
