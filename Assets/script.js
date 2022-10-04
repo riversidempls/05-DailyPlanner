@@ -50,35 +50,35 @@ $(document).ready(function(){
     var currenthour = moment();
     var hournow = currenthour.hour();
     console.log(hournow);
-    if (hournow <= 8) { 
+    if (hournow < 8) { 
         $("#h8,#h9,#h10,#h11,#h12,#h13,#h14,#h15,#h16,#h17").addClass("row, future");
     };
-    if (hournow <= 9) { 
+    if (hournow < 9) { 
         $("#h9,#h10,#h11,#h12,#h13,#h14,#h15,#h16,#h17").addClass("row, future");
     };
-    if (hournow <= 10) { 
+    if (hournow < 10) { 
         $("#h10,#h11,#h12,#h13,#h14,#h15,#h16,#h17").addClass("row, future");
     };
-    if (hournow <= 11) { 
+    if (hournow < 11) { 
         $("#11h,#h12,#h13,#h14,#h15,#h16,#h17").addClass("row, future");
     };
-    if (hournow <= 12) { 
+    if (hournow < 12) { 
         $("#12h,#h13,#h14,#h15,#h16,#h17").addClass("row, future");
     };
-    if (hournow <= 13) { 
+    if (hournow < 13) { 
         $("#13h,#h14,#h15,#h16,#h17").addClass("row, future");
     };
-    if (hournow <= 14) { 
+    if (hournow < 14) { 
         $("#14h,#h15,#h16,#h17").addClass("row, future");
     };
-    if (hournow <= 15) { 
+    if (hournow < 15) { 
         $("#15h,#h16,#h17").addClass("row, future");
     };
-    if (hournow <= 16) { 
+    if (hournow < 16) { 
         $("#16h,#h17").addClass("row, future");
     };    
-    if (hournow <=17) {
-        $("#17h").addClass("row, future);");
+    if (hournow < 17) {
+        $("#17h").addClass("row, future");
     };
 });
 };
@@ -93,7 +93,7 @@ function setDateTime () {
     var currentTime = datetime.format('LTS');
 //console.log(currentTime);
     document.getElementById('currentTime').innerHTML = currentTime;
-}
+};
 
 // Set intervals to refresh date/time and color the rows every second
 setInterval(setDateTime, 1000);
